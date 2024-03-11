@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="hajokApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="style.css">       
+    <title>Document</title>
+</head>
+<body class="oldal" ng-controller="hajokController">
+    <div>
+
+        <h2>Keresett település: </h2>
+        <input type="search" ng-model="keresettHely" placeholder="Keresés..." class="bar">
+
+        <div class="kartyak">
+        <div ng-repeat="hajo in hajokLista | filter:keresettHely">
+            <div class="card">
+                <h2>{{hajo.jarat}}</h2>
+                <p>{{hajo.azon}}</p>
+                <p>Innen: {{hajo.honnan}}</p>
+                <p>Ide: {{hajo.hova}}</p>
+                <p>Indul: {{hajo.indul}}</p>
+                <p>Érkezik: {{hajo.erkezik}}</p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <script src="angular.js"></script>
+</body>
+</html>
